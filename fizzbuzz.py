@@ -1,5 +1,7 @@
+from typing import List
+
 def fizzbuzz(x: int, y: int, limit: int, a: str, b: str) -> list[str]:
-    fb_data: list[str] = []
+    fb_data: List[str] = []
 
     for n in range(1, limit + 1):
         if n % (x * y) == 0:
