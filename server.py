@@ -34,8 +34,8 @@ def read_data() -> List[str]:
 @server.route("/stats")
 def show_stats() -> Dict[str, Union[str, Union[int, Dict[str, str]]]]:
     return {
-        "max": stats.get_max(),
-        "frequent": stats.get_frequent()
+        "max_hits_params": stats.get_max(),
+        "frequent_req_hits": stats.get_frequent()
     }
 
 
