@@ -23,9 +23,11 @@ python3 tests.py
 ## Third party libraries used:
 
 1. Flask
+
 [Flask](https://flask.palletsprojects.com/en/3.0.x/api/) is used here to setup the local host server, route pages and parse URL parameters.
 
 2. Requests
+
 Requests is used here for tests. It is used to make GET requests to the localhost server and receive response.
 
 ## API Documentation
