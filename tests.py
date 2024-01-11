@@ -52,7 +52,7 @@ class TestServer(unittest.TestCase):
     
     def test_stats(self):
         received_data = get_data("http://127.0.0.1:5000/stats")
-        actual_data = {"frequent_req_hits":1,"max_hits_params":{"int1":2,"int2":3,"limit":10,"str1":"hello","str2":"world"}}
+        actual_data = {"frequent_req_hits":2,"max_hits_params":{"int1":2,"int2":3,"limit":10,"str1":"hello","str2":"world"}}
         self.assertEqual(received_data, actual_data)
     
 if __name__ == "__main__":

@@ -22,12 +22,10 @@ class Stats:
 
         #  If the data is empty, then the endpoint is being accessed for the first time, in such case, add the parameters to the database.
         if len(self.present_data.fetchall()) == 0:
-            self.cursor.execute("INSERT INTO stats VALUES(?, ?, ?, ?, ?, 0, CURRENT_TIMESTAMP)", tuple(data))
-            print(self.cursor.execute("SELECT * FROM stats;").fetchall())
+            self.cursor.execute("INSERT INTO stats VALUES(?, ?, ?, ?, ?, 1, CURRENT_TIMESTAMP)", tuple(data))
         #  If the data already exists, the increment hits and update the date and time of the hit.
         else:
             self.cursor.execute("UPDATE stats SET hits = hits + 1, stamp = CURRENT_TIMESTAMP WHERE int1 = ? AND int2 = ? AND lim = ? AND str1 = ? AND str2 = ?;", tuple(data))
-            print(self.cursor.execute("SELECT * FROM stats;").fetchall())
 
         self.connection.commit()
 
